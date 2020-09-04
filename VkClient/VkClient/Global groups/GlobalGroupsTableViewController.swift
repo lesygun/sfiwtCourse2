@@ -20,8 +20,9 @@ class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpd
         super.viewDidLoad()
         
         generateGroups()
+        // setup search Bar
         currentGlobalGroups = globalGroups
-        
+    
         searchController.searchResultsUpdater = self
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
@@ -68,8 +69,12 @@ class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpd
         func updateSearchResults(for searchController: UISearchController) {
             if searchController.searchBar.text! == ""{
                 currentGlobalGroups = globalGroups
+                tableView.reloadData()
             } else {
-                //currentGlobalGroups = globalGroups.filter(<#T##isIncluded: (Group) throws -> Bool##(Group) throws -> Bool#>)
+                currentGlobalGroups = globalGroups.filter({group -> Bool in
+                    group.name.lowercased().contains(searchController.searchBar.text!.lowercased())
+                })
+                tableView.reloadData()
         }
    
    
