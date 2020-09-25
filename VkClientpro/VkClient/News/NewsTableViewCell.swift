@@ -45,9 +45,11 @@ class NewsTableViewCell: UITableViewCell {
         if likePressed.tag == 0 {
         likePressed.setImage(UIImage (named: "fillHeart"), for: .normal)
             likePressed.tag += 1
+            likesCount.text = "1"
         } else{
             likePressed.setImage(UIImage (named: "emptyHeart"), for: .normal)
             likePressed.tag -= 1
+            likesCount.text = "0"
         }
         
 }
