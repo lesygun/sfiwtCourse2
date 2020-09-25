@@ -1,0 +1,74 @@
+//
+//  NewsViewController.swift
+//  VkClient
+//
+//  Created by Елисей Аверкиев on 01.09.2020.
+//  Copyright © 2020 Elisey Averkiev. All rights reserved.
+//
+
+import UIKit
+
+class NewsViewController: UIViewController {
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        newsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil),
+        forCellReuseIdentifier: "NewsCellKeynib")
+    }
+    
+    @IBOutlet weak var newsTableView: UITableView!{
+        didSet{
+            newsTableView.dataSource = self
+            newsTableView.delegate = self
+        }
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension NewsViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 10
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCellKeynib", for: indexPath) as! NewsTableViewCell
+        
+        cell.likesCount?.text = "1"
+        cell.viewsCount?.text = "10000"
+        cell.groupIcon?.image = UIImage(named: "cruz1")
+        cell.setup()
+        cell.groupName?.text = "Круз Том"
+        cell.newsData?.text = "13.08.2020"
+        cell.newsImage?.image = UIImage(named: "bunin2")
+        cell.newsText?.text = "the Table View and these items are saved in Core Data.The view will display a contacts list. Everything has worked fine but I couldn't get a search bar to work. the Table View and these items are saved in Core Data.The view will display a contacts list. Everything has worked fine but I couldn't get a search bar to work"
+        
+        return cell
+    }
+    
+    
+}
+
+extension NewsViewController: UITableViewDelegate{
+    
+}
+
+
