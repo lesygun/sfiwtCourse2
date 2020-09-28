@@ -52,33 +52,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EBB8813D-6CCD-462B-B6DE-67BECA38BD01 - 841c2cdc8f0dec9a"
+                  uuid = "EBB8813D-6CCD-462B-B6DE-67BECA38BD01 - 41d5fb94c4c1ba88"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "VkClient.FriendsTableViewController.updateSearchResults(for: __C.UISearchController) -&gt; ()"
                   moduleName = "VkClient"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elisey/Downloads/VkClient/VkClient/Friends/FriendsTableViewController.swift"
+                  urlString = "file:///Users/elisey/Documents/swift/GeekBrains/VkClientpro/VkClient/Friends/FriendsTableViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "1301">
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "1210">
                </Location>
                <Location
-                  uuid = "EBB8813D-6CCD-462B-B6DE-67BECA38BD01 - 6f2f0adf99f8685b"
+                  uuid = "EBB8813D-6CCD-462B-B6DE-67BECA38BD01 - ea85304388b5748"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (VkClient.Friend) -&gt; Swift.Bool in VkClient.FriendsTableViewController.updateSearchResults(for: __C.UISearchController) -&gt; ()"
+                  symbolName = "closure #1 (VkClient.Friend) -&gt; Swift.Bool in VkClient.FriendsTableViewController.updateSearchResults(for: __C.UISearchController) -&gt; ()"
                   moduleName = "VkClient"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elisey/Downloads/VkClient/VkClient/Friends/FriendsTableViewController.swift"
+                  urlString = "file:///Users/elisey/Documents/swift/GeekBrains/VkClientpro/VkClient/Friends/FriendsTableViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
+                  startingLineNumber = "143"
+                  endingLineNumber = "143"
                   offsetFromSymbolStart = "87">
                </Location>
             </Locations>
