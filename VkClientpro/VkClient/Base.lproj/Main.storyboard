@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login Form Controller-->
+        <!--LoginFormController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginFormController" customModule="VkClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginFormController" title="LoginFormController" id="BYZ-38-t0r" customClass="LoginFormController" customModule="VkClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,22 +566,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAS-vp-wOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="175" y="824"/>
+            <point key="canvasLocation" x="-1136" y="118"/>
         </scene>
         <!--Get Friends-->
         <scene sceneID="kMV-L4-Ajb">
             <objects>
-                <viewController id="flx-fZ-cvD" customClass="GetFriends" customModule="VkClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestBoard" id="flx-fZ-cvD" customClass="GetFriends" customModule="VkClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bgj-Ed-RpX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xo-Z3-Dnq">
+                                <rect key="frame" x="161" y="193" width="92" height="30"/>
+                                <state key="normal" title="Make Friends"/>
+                                <connections>
+                                    <action selector="makeFriends:" destination="flx-fZ-cvD" eventType="touchUpInside" id="vcz-07-KAC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUW-7v-vYY">
+                                <rect key="frame" x="168" y="394" width="80" height="30"/>
+                                <state key="normal" title="Make Fotos"/>
+                                <connections>
+                                    <action selector="makeFotos:" destination="flx-fZ-cvD" eventType="touchUpInside" id="FuD-Ez-wUB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-YL-FbM">
+                                <rect key="frame" x="162" y="304" width="91" height="30"/>
+                                <state key="normal" title="Make Groups"/>
+                                <connections>
+                                    <action selector="makeGroups:" destination="flx-fZ-cvD" eventType="touchUpInside" id="kQF-7K-uiw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DSM-YL-FbM" firstAttribute="leading" secondItem="W79-U3-ozb" secondAttribute="leading" constant="162" id="20d-5C-1aF"/>
+                            <constraint firstItem="W79-U3-ozb" firstAttribute="trailing" secondItem="vUW-7v-vYY" secondAttribute="trailing" constant="166" id="9vo-fS-mvL"/>
+                            <constraint firstItem="W79-U3-ozb" firstAttribute="trailing" secondItem="DSM-YL-FbM" secondAttribute="trailing" constant="161" id="Bk6-We-KXM"/>
+                            <constraint firstItem="DSM-YL-FbM" firstAttribute="top" secondItem="4xo-Z3-Dnq" secondAttribute="bottom" constant="81" id="PrG-o4-ZiY"/>
+                            <constraint firstItem="W79-U3-ozb" firstAttribute="bottom" secondItem="vUW-7v-vYY" secondAttribute="bottom" constant="438" id="SBQ-ul-esm"/>
+                            <constraint firstItem="vUW-7v-vYY" firstAttribute="leading" secondItem="W79-U3-ozb" secondAttribute="leading" constant="168" id="SbA-sa-jkI"/>
+                            <constraint firstItem="vUW-7v-vYY" firstAttribute="top" secondItem="DSM-YL-FbM" secondAttribute="bottom" constant="60" id="Ydp-vg-1aw"/>
+                            <constraint firstItem="4xo-Z3-Dnq" firstAttribute="top" secondItem="W79-U3-ozb" secondAttribute="top" constant="149" id="a2h-3X-9YU"/>
+                            <constraint firstItem="W79-U3-ozb" firstAttribute="trailing" secondItem="4xo-Z3-Dnq" secondAttribute="trailing" constant="161" id="ifX-EY-mXR"/>
+                            <constraint firstItem="4xo-Z3-Dnq" firstAttribute="leading" secondItem="W79-U3-ozb" secondAttribute="leading" constant="161" id="x9P-dg-Krz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="W79-U3-ozb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beR-84-N6S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="1868"/>
+            <point key="canvasLocation" x="-630.43478260869574" y="949.55357142857133"/>
         </scene>
         <!--Load View Controller-->
         <scene sceneID="baP-5U-KVI">

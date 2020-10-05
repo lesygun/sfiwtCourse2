@@ -35,6 +35,7 @@
 		3CF17F51252121C3004584DC /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF17F50252121C3004584DC /* Friends.swift */; };
 		3CF2865224F6E05A00AE0D4C /* LikeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2865124F6E05A00AE0D4C /* LikeUIView.swift */; };
 		3CF2865424F6EF8100AE0D4C /* AvatarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2865324F6EF8100AE0D4C /* AvatarCustomView.swift */; };
+		3CF3ED87252A246F00CFCB4A /* friendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3ED86252A246F00CFCB4A /* friendsService.swift */; };
 		533C40E58ABFC5D8401C5B63 /* Pods_VkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2976657957F1C8E8F717ECC /* Pods_VkClient.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		3CF17F50252121C3004584DC /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		3CF2865124F6E05A00AE0D4C /* LikeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUIView.swift; sourceTree = "<group>"; };
 		3CF2865324F6EF8100AE0D4C /* AvatarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCustomView.swift; sourceTree = "<group>"; };
+		3CF3ED86252A246F00CFCB4A /* friendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsService.swift; sourceTree = "<group>"; };
 		B2976657957F1C8E8F717ECC /* Pods_VkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E3074C91D2FC24224EF4C6 /* Pods-VkClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClient.debug.xcconfig"; path = "Target Support Files/Pods-VkClient/Pods-VkClient.debug.xcconfig"; sourceTree = "<group>"; };
 		E959C7E3BDCB3A951F285A9F /* Pods-VkClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkClient.release.xcconfig"; path = "Target Support Files/Pods-VkClient/Pods-VkClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,8 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3CDCDBA3251DE85D00D8B8F1 /* Session.swift */,
-				3CF17F4C252104EA004584DC /* AutorizeViewController.swift */,
-				3CF17F50252121C3004584DC /* Friends.swift */,
+				3CF3ED832524FF0800CFCB4A /* Authorize */,
 				3C57A7A824FE289200BEAD34 /* News */,
 				3CDF67B824DD5EC000725A63 /* structs */,
 				3CDF67B124DD58FB00725A63 /* Global groups */,
@@ -195,6 +196,16 @@
 				3C57A7AF24FE2DA900BEAD34 /* NewsStruct.swift */,
 			);
 			path = structs;
+			sourceTree = "<group>";
+		};
+		3CF3ED832524FF0800CFCB4A /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				3CF17F4C252104EA004584DC /* AutorizeViewController.swift */,
+				3CF17F50252121C3004584DC /* Friends.swift */,
+				3CF3ED86252A246F00CFCB4A /* friendsService.swift */,
+			);
+			path = Authorize;
 			sourceTree = "<group>";
 		};
 		93514B0D5B8AD010A11F73B4 /* Pods */ = {
@@ -341,6 +352,7 @@
 				3CDF67B524DD596100725A63 /* GlobalGroupsTableViewController.swift in Sources */,
 				3CB6820524D954AC0077FFDE /* SceneDelegate.swift in Sources */,
 				3C57A7AD24FE290700BEAD34 /* NewsTableViewCell.swift in Sources */,
+				3CF3ED87252A246F00CFCB4A /* friendsService.swift in Sources */,
 				3C88F89C250B57A600DD80DD /* GalleryViewController.swift in Sources */,
 				3CF17F4D252104EA004584DC /* AutorizeViewController.swift in Sources */,
 				3CF2865424F6EF8100AE0D4C /* AvatarCustomView.swift in Sources */,

@@ -11,16 +11,20 @@ import WebKit
 import Alamofire
 
 class AutorizeViewController: UIViewController {
+    
 
     @IBOutlet weak var webView: WKWebView!{
         didSet{
             webView.navigationDelegate = self
         }
     }
+    
+   
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
@@ -30,7 +34,7 @@ class AutorizeViewController: UIViewController {
             URLQueryItem(name: "client_id", value: "7611165"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "scope", value: "offline"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.68")
         ]
@@ -38,22 +42,20 @@ class AutorizeViewController: UIViewController {
         let request = URLRequest(url: urlComponents.url!)
         
         webView.load(request)
-
+        
+        
+        }
+    
+    func nextVC() {
+        let nextView = GetFriends()
+        self.navigationController?.pushViewController(nextView, animated: true)
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
+
+
+
 extension AutorizeViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         //Если это нужный нам URL (/blank.html), и в нем есть токен, приступим к его обработке, если же нет, дадим зеленый свет на переход между страницами c помощью метода decisionHandler(.allow). Дальше мы просто режем строку с параметрами на части, используя как разделители символы & и =.
@@ -77,10 +79,11 @@ extension AutorizeViewController: WKNavigationDelegate{
         //Сохраняем токен в сессию
         Session.shared.token = token
         
-        print(token)
-        
+        if Session.shared.token != nil{
+            let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TestBoard") as! GetFriends
+            present(loginVC, animated: true)
+        }
         
         decisionHandler(.cancel)
     }
-
 }
