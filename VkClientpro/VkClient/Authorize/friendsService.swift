@@ -35,7 +35,7 @@ class FriendsService {
     }
 }
 
-// MARK: - Response
+// MARK: - Responses
 struct Response: Codable {
     let items: [Items]
 }
@@ -62,7 +62,7 @@ enum TopCodingKeys: String, CodingKey {
 extension Response{
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: TopCodingKeys.self)
-        
+
         let meta = try container.nestedContainer(keyedBy: TopCodingKeys.self, forKey: .response)
         let response = try meta.decode([Items].self, forKey: .items)
         self.init(items: response)
