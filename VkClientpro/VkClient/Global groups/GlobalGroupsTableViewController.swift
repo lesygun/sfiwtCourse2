@@ -10,10 +10,10 @@ import UIKit
 
 class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
-    var doneGroups = [GroupsItem]()
+    var doneGroups = [GroupItem]()
 
     // search Bar
-    var currentGlobalGroups = [GroupsItem]()
+    var currentGlobalGroups = [GroupItem]()
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpd
         
         groupsTry.getGroups(callback: {result in
             
-            self.doneGroups = result.items
+            self.doneGroups = result
             self.currentGlobalGroups = self.doneGroups
             self.tableView.reloadData()
         })
