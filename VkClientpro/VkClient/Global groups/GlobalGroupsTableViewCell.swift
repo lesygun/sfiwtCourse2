@@ -9,19 +9,17 @@
 import UIKit
 
 class GlobalGroupsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var globalGroupName: UILabel!
     
     @IBOutlet weak var globalGroupIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
