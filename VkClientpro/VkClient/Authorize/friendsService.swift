@@ -8,13 +8,14 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class FriendsService {
     
     var baseUrl = "api.vk.com"
     var token = Session.shared.token
     
-    func getFriends (callback: @escaping (Response) -> Void) {
+    func getFriends (callback: @escaping ([ItemValue]) -> Void) {
 
         let url = "https://\(baseUrl)/method/friends.get?&access_token=\(token!)&v=5.124"
 
@@ -29,42 +30,61 @@ class FriendsService {
 
             let decoder = JSONDecoder()
 
-            let friend = try? decoder.decode(Response.self, from: data)
+            let friend = try? decoder.decode(FriendsResponse.self, from: data).response.items
+            
+            self.saveFriendsData(friend!)
             callback (friend!)
             }
     }
+   // сохранение погодных данных в Realm
+        func saveFriendsData(_ friends: [ItemValue]) {
+    // обработка исключений при работе с хранилищем
+            do {
+    // получаем доступ к хранилищу
+                let realm = try Realm()
+    // начинаем изменять хранилище
+                realm.beginWrite()
+    // кладем все объекты класса погоды в хранилище
+                realm.add(friends)
+    // завершаем изменения хранилища
+                try realm.commitWrite()
+            } catch {
+    // если произошла ошибка, выводим ее в консоль
+                print(error)
+            }
+        }
+
 }
 
-// MARK: - Responses
-struct Response: Codable {
-    let items: [Items]
+// MARK: - FriendsResponse
+class FriendsResponse: Codable {
+    let response: Response
+
+    init(response: Response) {
+        self.response = response
+    }
+}
+
+// MARK: - Response
+class Response: Codable {
+    let items: [ItemValue]
+
+    init(items: [ItemValue]) {
+        self.items = items
+    }
 }
 
 // MARK: - Item
-struct Items: Codable {
-    let id: Int
-    let firstName: String
-    let lastName: String
-    let photoOrig: String
+class ItemValue: Object, Codable {
+    @objc dynamic var id: Int
+    @objc dynamic var firstName: String
+    @objc dynamic var lastName: String
+    @objc dynamic var photoOrig: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case firstName = "first_name"
         case lastName = "last_name"
         case photoOrig = "photo_200_orig"
-    }
-}
-enum TopCodingKeys: String, CodingKey {
-    case response
-    case items
-}
-//MARK: Init of items values
-extension Response{
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: TopCodingKeys.self)
-
-        let meta = try container.nestedContainer(keyedBy: TopCodingKeys.self, forKey: .response)
-        let response = try meta.decode([Items].self, forKey: .items)
-        self.init(items: response)
     }
 }

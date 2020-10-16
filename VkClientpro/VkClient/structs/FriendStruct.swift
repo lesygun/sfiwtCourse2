@@ -8,8 +8,4 @@
 
 import Foundation
 
-struct Friend {
-    var friendName: String
-    var friendAvatar: String
-    var friendPhotos: [String?]
-}
+

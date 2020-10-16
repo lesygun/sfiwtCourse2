@@ -18,14 +18,10 @@ class AutorizeViewController: UIViewController {
             webView.navigationDelegate = self
         }
     }
-    
-   
-
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -40,21 +36,9 @@ class AutorizeViewController: UIViewController {
         ]
         
         let request = URLRequest(url: urlComponents.url!)
-        
         webView.load(request)
-        
-        
-        }
-    
-    func nextVC() {
-        let nextView = GetFriends()
-        self.navigationController?.pushViewController(nextView, animated: true)
     }
-    
-   
 }
-
-
 
 extension AutorizeViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
