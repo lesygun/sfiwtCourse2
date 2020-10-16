@@ -66,14 +66,9 @@ class GetFriends: UIViewController{
        }
     
     @IBAction func makeFotos(_ sender: Any) {
-        //ссылка на запрос фотографий
-        let urlPhotos = "https://api.vk.com/method/photos.get?&access_token=\(token!)&v=5.124"
-        //запрос фотографий
-        AF.request(urlPhotos, method: .get, parameters: parametersPhotos) .responseJSON {(response) in
-            
-            debugPrint(response)
-        }
-    }
-    
-    
+        let photos = PhotoService()
+        photos.getPhotos(id: 123434, callback: { photos  in
+            print(photos.items.self)
+    })
+}
 }

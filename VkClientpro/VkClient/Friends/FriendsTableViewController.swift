@@ -64,8 +64,7 @@ class FriendsTableViewController: UITableViewController {
                
                friendsTry.getFriends(callback: { friend in
                    self.doneFriend = friend.items
-                   self.testName = friend.items[0].firstName
-                   self.testId = friend.items[0].id
+                   
                 self.tableView.reloadData()
                 
                })
@@ -135,15 +134,14 @@ class FriendsTableViewController: UITableViewController {
         return cell
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let photosFriendsController = segue.destination as? PhotosCollectionViewController{
-//            if let indexPath = tableView.indexPathForSelectedRow{
-//                let photoKey = friendSectionTitles [indexPath.section]
-//                let friend = friendsDictionary [photoKey]
-//                photosFriendsController.friendsPhotos = friend! [indexPath.row].friendPhotos
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let photosFriendsController = segue.destination as? PhotosCollectionViewController{
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let IdKey = doneFriend[indexPath.row].id
+                photosFriendsController.friendID = IdKey
+            }
+        }
+    }
 //
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //        return friendSectionTitles[section]

@@ -11,22 +11,20 @@ import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
     
-    var friendsPhotos = [String?]()
-    
+    var friendID = Int()
+    var friendPhotos = [Item]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let photosTry = PhotoService()
+        
+        photosTry.getPhotos(id: friendID, callback: {result in
+            
+            self.friendPhotos = result.items
+            self.collectionView.reloadData()
+        })
+        self.collectionView.reloadData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -38,27 +36,27 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return friendsPhotos.count
+        return friendPhotos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "friendPhotoCollectionViewCellKey", for: indexPath) as! PhotoCollectionViewCell
     
-        let friendPhotoKey = friendsPhotos[indexPath.row]
-        
-        cell.friendPhoto.image = UIImage.init(named: friendPhotoKey!)
+        let friendPhotoUrl = friendPhotos[indexPath.row].sizes[2].url
+        let url = NSURL(string: friendPhotoUrl)
+        cell.friendPhoto.load(url: url as! URL)
         
         //cell.friendPhoto = UIImageView.init(image: UIImage.init(named: friendPhotoKey!) )
     
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let GalleryController = segue.destination as? GalleryViewController{
-                GalleryController.photoArray = friendsPhotos
-            }
-        }
-    }
+}
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let GalleryController = segue.destination as? GalleryViewController{
+//            GalleryController.photoArray = friendPhotos[0].url
+//            }
+//        }
+//    }
 
     // MARK: UICollectionViewDelegate
 
@@ -90,5 +88,6 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+
 
 
