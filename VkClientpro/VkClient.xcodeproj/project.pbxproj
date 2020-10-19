@@ -11,6 +11,7 @@
 		3C3E6C49252F6EA0007031E5 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E6C48252F6EA0007031E5 /* TestTableViewController.swift */; };
 		3C3E6C4B252F6EC0007031E5 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E6C4A252F6EC0007031E5 /* TestView.swift */; };
 		3C3E6C4D2530A16E007031E5 /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E6C4C2530A16E007031E5 /* GroupsService.swift */; };
+		3C3E6C53253CCA06007031E5 /* RealmFriendsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E6C52253CCA06007031E5 /* RealmFriendsService.swift */; };
 		3C57A7AA24FE28DB00BEAD34 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A7A924FE28DB00BEAD34 /* NewsViewController.swift */; };
 		3C57A7AD24FE290700BEAD34 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A7AB24FE290600BEAD34 /* NewsTableViewCell.swift */; };
 		3C57A7AE24FE290700BEAD34 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C57A7AC24FE290600BEAD34 /* NewsTableViewCell.xib */; };
@@ -48,6 +49,7 @@
 		3C3E6C48252F6EA0007031E5 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		3C3E6C4A252F6EC0007031E5 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		3C3E6C4C2530A16E007031E5 /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		3C3E6C52253CCA06007031E5 /* RealmFriendsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFriendsService.swift; sourceTree = "<group>"; };
 		3C57A7A924FE28DB00BEAD34 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		3C57A7AB24FE290600BEAD34 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		3C57A7AC24FE290600BEAD34 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				3C3E6C48252F6EA0007031E5 /* TestTableViewController.swift */,
 				3C3E6C4A252F6EC0007031E5 /* TestView.swift */,
+				3C3E6C52253CCA06007031E5 /* RealmFriendsService.swift */,
 			);
 			path = TestTableView;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				3CDF67B724DD597600725A63 /* GlobalGroupsTableViewCell.swift in Sources */,
 				3C57A7B024FE2DA900BEAD34 /* NewsStruct.swift in Sources */,
 				3CF17F51252121C3004584DC /* Friends.swift in Sources */,
+				3C3E6C53253CCA06007031E5 /* RealmFriendsService.swift in Sources */,
 				3CDF67BA24DD5ECF00725A63 /* FriendStruct.swift in Sources */,
 				3CB6821724D95C200077FFDE /* LoginFormController.swift in Sources */,
 				3CDF67BC24DD7FBE00725A63 /* GroupStruct.swift in Sources */,
