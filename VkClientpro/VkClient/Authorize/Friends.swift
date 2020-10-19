@@ -29,7 +29,7 @@ class GetFriends: UIViewController{
     @IBAction func makeGroups(_ sender: Any) {
         let groups = GroupsService()
             groups.getGroups(callback: { results  in
-                print(results.items)
+                print(results)
         })
        }
     

@@ -10,8 +10,8 @@ import UIKit
 
 class MyGroupsTableViewController: UITableViewController, UISearchResultsUpdating {
     
-    var groups = [GroupsItem]()
-    var currentGroups = [GroupsItem]()
+    var groups = [GroupItem]()
+    var currentGroups = [GroupItem]()
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {

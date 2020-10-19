@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class PhotoService {
     
@@ -32,41 +33,27 @@ class PhotoService {
             
             let photoGalery = try? decoder.decode(PhotoResponse.self, from: data).response.items
            
+            self.savePhotosData(photoGalery!)
             callback(photoGalery!)
-            debugPrint("Hi")
         }
     }
-}
+    
+    func  savePhotosData(_ photos: [PhotoItem]) {
 
-//// MARK: - PhotoGalery
-//struct PhotoGalery: Codable {
-//    let response: PhotoResponse
-//}
-//
-//// MARK: - Response
-//struct PhotoResponse: Codable {
-//    let count: Int
-//    let items: [Item]
-//}
-//
-//// MARK: - Item
-//struct Item: Codable {
-//    let albumID: Int
-//    let id: Int
-//    let sizes: [Size]
-//
-//    enum CodingKeys: String, CodingKey {
-//        case albumID = "album_id"
-//        case id
-//        case sizes
-//    }
-//}
-//
-//// MARK: - Size
-//struct Size: Codable {
-//    let url: String
-//    let type: String
-//}
+            do {
+
+                let realm = try Realm()
+
+                realm.beginWrite()
+                realm.add(photos)
+
+                try realm.commitWrite()
+                
+            } catch {
+                print(error)
+            }
+        }
+}
 // MARK: - PhotoResponse
 class PhotoResponse: Codable {
     let response: MyResponse
@@ -75,7 +62,6 @@ class PhotoResponse: Codable {
         self.response = response
     }
 }
-
 // MARK: - Response
 class MyResponse: Codable {
     let items: [PhotoItem]
@@ -84,9 +70,8 @@ class MyResponse: Codable {
         self.items = items
     }
 }
-
 // MARK: - Item
-class PhotoItem: Codable {
+class PhotoItem: Object, Codable {
     let albumID: Int
     let id: Int
     let sizes: [Size]
@@ -96,14 +81,7 @@ class PhotoItem: Codable {
         case id
         case sizes
     }
-
-    init(albumID: Int, id: Int, sizes: [Size]) {
-        self.albumID = albumID
-        self.id = id
-        self.sizes = sizes
-    }
 }
-
 // MARK: - Size
 class Size: Codable {
 
