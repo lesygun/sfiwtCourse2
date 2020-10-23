@@ -14,8 +14,9 @@ import RealmSwift
 class GroupsService {
     var baseUrl = "api.vk.com"
     var token = Session.shared.token
+    let realmService = RealmGroupsService()
     
-    func getGroups (callback: @escaping ([GroupItem]) -> Void) {
+    func getGroups (callback: @escaping () -> Void) {
 
         let url = "https://\(baseUrl)/method/groups.get?&access_token=\(token!)&v=5.124"
 
@@ -33,8 +34,8 @@ class GroupsService {
             
             let groupsGalery = try? decoder.decode(GroupResponse.self, from: data).response.items
             
-            self.saveGroupsData(groupsGalery!)
-            callback(groupsGalery!)
+            self.realmService.saveGroupsData(groupsGalery!)
+            callback()
         }
     }
     
@@ -105,8 +106,8 @@ class MyGroupResponse: Codable {
 
 // MARK: - Item
 class GroupItem: Object, Codable {
-    let name: String
-    let photo200: String
+    @objc dynamic let name: String
+    @objc dynamic let photo200: String
 
     enum CodingKeys: String, CodingKey {
         case name
