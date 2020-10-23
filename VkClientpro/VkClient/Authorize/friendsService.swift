@@ -14,8 +14,8 @@ class FriendsService {
     
     var baseUrl = "api.vk.com"
     var token = Session.shared.token
-    
-    func getFriends (callback: @escaping ([ItemValue]) -> Void) {
+    let realmService = RealmFriendsService()
+    func getFriends (callback: @escaping () -> Void) {
 
         let url = "https://\(baseUrl)/method/friends.get?&access_token=\(token!)&v=5.124"
 
@@ -32,28 +32,10 @@ class FriendsService {
 
             let friend = try? decoder.decode(FriendsResponse.self, from: data).response.items
             
-            self.saveFriendsData(friend!)
-            callback (friend!)
+            self.realmService.saveFriendsData(friend!)
+            callback()
             }
     }
-   // сохранение погодных данных в Realm
-        func saveFriendsData(_ friends: [ItemValue]) {
-    // обработка исключений при работе с хранилищем
-            do {
-    // получаем доступ к хранилищу
-                let realm = try Realm()
-    // начинаем изменять хранилище
-                realm.beginWrite()
-    // кладем все объекты класса погоды в хранилище
-                realm.add(friends)
-    // завершаем изменения хранилища
-                try realm.commitWrite()
-            } catch {
-    // если произошла ошибка, выводим ее в консоль
-                print(error)
-            }
-        }
-
 }
 
 // MARK: - FriendsResponse
@@ -88,3 +70,4 @@ class ItemValue: Object, Codable {
         case photoOrig = "photo_200_orig"
     }
 }
+

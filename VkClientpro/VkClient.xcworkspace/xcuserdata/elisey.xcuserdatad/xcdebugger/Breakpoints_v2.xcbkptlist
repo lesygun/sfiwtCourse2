@@ -167,15 +167,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2F9785B6-3E00-4FF8-97CA-C57952792A6F"
+            uuid = "75A8F551-2692-4E01-9E23-1F8E2AC1C4A2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VkClient/Photos/PhotosCollectionViewController.swift"
+            filePath = "VkClient/Friends/FriendsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -183,64 +183,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A477F43E-8412-4B0E-A9BA-C24443CD210B"
+            uuid = "35DD316B-9AF8-4387-B37A-1C5A49D88EAC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VkClient/Photos/PhotosCollectionViewController.swift"
+            filePath = "VkClient/Friends/FriendsTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A477F43E-8412-4B0E-A9BA-C24443CD210B - 3f9712f63bfd24da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VkClient.PhotosCollectionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "VkClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elisey/Documents/swift%20%D0%BA%D1%83%D1%80%D1%81/GeekBrains/VkClientpro/VkClient/Photos/PhotosCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "161">
-               </Location>
-               <Location
-                  uuid = "A477F43E-8412-4B0E-A9BA-C24443CD210B - 3b5e2bff86c54bfe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;VkClient.PhotoItem&gt;) -&gt; () in VkClient.PhotosCollectionViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "VkClient"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/elisey/Documents/swift%20%D0%BA%D1%83%D1%80%D1%81/GeekBrains/VkClientpro/VkClient/Photos/PhotosCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "87">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8FD793A8-42FF-4BF2-A690-458376F0A892"
+            uuid = "4AE69F6B-2C9F-4B02-8D04-ED82249CE026"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VkClient/Photos/PhotosCollectionViewController.swift"
+            filePath = "VkClient/TestTableView/RealmFriendsService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "saveFriendsData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C63E189B-3598-4B41-8F19-648835ECC877"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VkClient/TestTableView/RealmFriendsService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "loadFriendsData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

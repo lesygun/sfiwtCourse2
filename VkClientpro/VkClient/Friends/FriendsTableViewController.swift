@@ -23,6 +23,7 @@ class FriendsTableViewController: UITableViewController {
     var doneFriend = [ItemValue]()
     var testName = String()
     var testId = Int()
+    let realmService = RealmFriendsService()
 
 //    var friendsDictionary = [String: [String]]
 //    var friendSecondNames = [Friend]()
@@ -33,10 +34,10 @@ class FriendsTableViewController: UITableViewController {
         
         let friendsTry = FriendsService()
                
-               friendsTry.getFriends(callback: { friend in
-                self.doneFriend = friend
+               friendsTry.getFriends(callback: { [weak self] in
+                self!.realmService.loadFriendsData()
                    
-                self.tableView.reloadData()
+                self!.tableView.reloadData()
                 
                })
         
