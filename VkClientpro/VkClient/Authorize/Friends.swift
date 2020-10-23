@@ -27,10 +27,8 @@ class GetFriends: UIViewController{
 //    }
     
     @IBAction func makeGroups(_ sender: Any) {
-        let groups = GroupsService()
-            groups.getGroups(callback: { results  in
-                print(results)
-        })
+        
+        
        }
     
     @IBAction func makeFotos(_ sender: Any) {

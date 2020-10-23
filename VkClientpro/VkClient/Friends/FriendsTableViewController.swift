@@ -34,10 +34,10 @@ class FriendsTableViewController: UITableViewController {
         
         let friendsTry = FriendsService()
                
-               friendsTry.getFriends(callback: { [weak self] in
-                self!.realmService.loadFriendsData()
+        friendsTry.getFriends(callback: { [unowned self] in
+            self.doneFriend = self.realmService.loadFriendsData()
                    
-                self!.tableView.reloadData()
+            self.tableView.reloadData()
                 
                })
         
