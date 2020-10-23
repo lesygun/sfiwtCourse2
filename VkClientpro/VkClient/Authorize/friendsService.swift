@@ -69,5 +69,8 @@ class ItemValue: Object, Codable {
         case lastName = "last_name"
         case photoOrig = "photo_200_orig"
     }
+//    override static func primaryKey() -> String? {
+//        return "id"
+//    }
 }
 
