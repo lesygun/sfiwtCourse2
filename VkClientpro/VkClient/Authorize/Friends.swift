@@ -32,9 +32,7 @@ class GetFriends: UIViewController{
        }
     
     @IBAction func makeFotos(_ sender: Any) {
-        let photos = PhotoService()
-        photos.getPhotos(id: 123434, callback: { photos  in
-            print(photos)
-    })
+       
+    }
 }
-}
+
