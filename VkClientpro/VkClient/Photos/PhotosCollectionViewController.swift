@@ -13,15 +13,16 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     var friendID = Int()
     var friendPhotos = [PhotoItem]()
+    let realmService = RealmPhotoService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let photosTry = PhotoService()
         
-        photosTry.getPhotos(id: friendID, callback: {result in
+        photosTry.getPhotos(id: friendID, callback: { [unowned self] in
             
-            self.friendPhotos = result
+            self.friendPhotos = self.realmService.loadPhotosData()
             self.collectionView.reloadData()
         })
         self.collectionView.reloadData()

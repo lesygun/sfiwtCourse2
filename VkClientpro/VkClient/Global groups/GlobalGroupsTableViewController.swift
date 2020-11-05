@@ -11,6 +11,7 @@ import UIKit
 class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     var doneGroups = [GroupItem]()
+    let realmService = RealmGroupsService()
 
     // search Bar
     var currentGlobalGroups = [GroupItem]()
@@ -21,9 +22,9 @@ class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpd
         
         let groupsTry = GroupsService()
         
-        groupsTry.getGroups(callback: {result in
+        groupsTry.getGroups(callback: { [unowned self] in
             
-            self.doneGroups = result
+            self.doneGroups = self.realmService.loadGroupsData()
             self.currentGlobalGroups = self.doneGroups
             self.tableView.reloadData()
         })
