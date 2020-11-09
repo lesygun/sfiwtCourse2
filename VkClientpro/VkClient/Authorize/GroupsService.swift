@@ -16,7 +16,7 @@ class GroupsService {
     var token = Session.shared.token
     let realmService = RealmGroupsService()
     
-    func getGroups (callback: @escaping () -> Void) {
+    func getGroups (callback: @escaping ([GroupItem]) -> Void) {
 
         let url = "https://\(baseUrl)/method/groups.get?&access_token=\(token!)&v=5.124"
 
@@ -35,7 +35,7 @@ class GroupsService {
             let groupsGalery = try? decoder.decode(GroupResponse.self, from: data).response.items
             
             self.realmService.saveGroupsData(groupsGalery!)
-            callback()
+            callback(groupsGalery!)
         }
     }
     

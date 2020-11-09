@@ -14,7 +14,8 @@ class RealmGroupsService{
     var doneGroups = [GroupItem]()
     
     func  saveGroupsData(_ groups: [GroupItem]) {
-        Realm.Configuration.defaultConfiguration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        
+//        Realm.Configuration.defaultConfiguration = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         do {
             
             let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)

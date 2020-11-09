@@ -22,11 +22,11 @@ class GlobalGroupsTableViewController: UITableViewController, UISearchResultsUpd
         
         let groupsTry = GroupsService()
         
-        groupsTry.getGroups(callback: { [unowned self] in
+        groupsTry.getGroups(callback: { [weak self] result in
             
-            self.doneGroups = self.realmService.loadGroupsData()
-            self.currentGlobalGroups = self.doneGroups
-            self.tableView.reloadData()
+            self?.doneGroups = result
+            self?.currentGlobalGroups = self?.doneGroups as! [GroupItem]
+            self!.tableView.reloadData()
         })
         // Search Bar setup
         

@@ -32,7 +32,12 @@ class GetFriends: UIViewController{
        }
     
     @IBAction func makeFotos(_ sender: Any) {
+<<<<<<< HEAD
        
     }
+=======
+        
+}
+>>>>>>> lesson3.5.2
 }
 

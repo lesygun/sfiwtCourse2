@@ -20,10 +20,10 @@ class PhotosCollectionViewController: UICollectionViewController {
         
         let photosTry = PhotoService()
         
-        photosTry.getPhotos(id: friendID, callback: { [unowned self] in
+        photosTry.getPhotos(id: friendID, callback: { [weak self] result in
             
-            self.friendPhotos = self.realmService.loadPhotosData()
-            self.collectionView.reloadData()
+            self?.friendPhotos = result
+            self?.collectionView.reloadData()
         })
         self.collectionView.reloadData()
     }
