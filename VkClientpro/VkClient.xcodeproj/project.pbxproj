@@ -18,6 +18,8 @@
 		3C57A7B024FE2DA900BEAD34 /* NewsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A7AF24FE2DA900BEAD34 /* NewsStruct.swift */; };
 		3C57A7B4250161E900BEAD34 /* LoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57A7B3250161E900BEAD34 /* LoadViewController.swift */; };
 		3C88F89C250B57A600DD80DD /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C88F89B250B57A600DD80DD /* GalleryViewController.swift */; };
+		3C95C4ED255960CB002F8C5A /* RealmNewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95C4EC255960CB002F8C5A /* RealmNewsService.swift */; };
+		3C95C4EF2559612D002F8C5A /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95C4EE2559612D002F8C5A /* NewsService.swift */; };
 		3CB6820324D954AC0077FFDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6820224D954AC0077FFDE /* AppDelegate.swift */; };
 		3CB6820524D954AC0077FFDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6820424D954AC0077FFDE /* SceneDelegate.swift */; };
 		3CB6820A24D954AC0077FFDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CB6820824D954AC0077FFDE /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		3C57A7AF24FE2DA900BEAD34 /* NewsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStruct.swift; sourceTree = "<group>"; };
 		3C57A7B3250161E900BEAD34 /* LoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewController.swift; sourceTree = "<group>"; };
 		3C88F89B250B57A600DD80DD /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		3C95C4EC255960CB002F8C5A /* RealmNewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmNewsService.swift; sourceTree = "<group>"; };
+		3C95C4EE2559612D002F8C5A /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		3CB681FF24D954AC0077FFDE /* VkClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB6820224D954AC0077FFDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CB6820424D954AC0077FFDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				3C3E6C52253CCA06007031E5 /* RealmFriendsService.swift */,
+				3C95C4EC255960CB002F8C5A /* RealmNewsService.swift */,
 				3CC2128A2542DEE800F703E5 /* RealmGroupsService.swift */,
 				3CC212882542DECD00F703E5 /* RealmPhotoService.swift */,
 			);
@@ -241,6 +246,7 @@
 				3CF3ED86252A246F00CFCB4A /* friendsService.swift */,
 				3C3E6C45252EF706007031E5 /* PhotoService.swift */,
 				3C3E6C4C2530A16E007031E5 /* GroupsService.swift */,
+				3C95C4EE2559612D002F8C5A /* NewsService.swift */,
 			);
 			path = Authorize;
 			sourceTree = "<group>";
@@ -386,10 +392,12 @@
 				3CDF67AB24DC4B4200725A63 /* PhotoCollectionViewCell.swift in Sources */,
 				3CDF67B024DD540200725A63 /* MyGroupTableViewCell.swift in Sources */,
 				3CDF67A424DC3CDB00725A63 /* FriendsTableViewController.swift in Sources */,
+				3C95C4ED255960CB002F8C5A /* RealmNewsService.swift in Sources */,
 				3C3E6C46252EF706007031E5 /* PhotoService.swift in Sources */,
 				3CDCDBA4251DE85D00D8B8F1 /* Session.swift in Sources */,
 				3CDF67B524DD596100725A63 /* GlobalGroupsTableViewController.swift in Sources */,
 				3CB6820524D954AC0077FFDE /* SceneDelegate.swift in Sources */,
+				3C95C4EF2559612D002F8C5A /* NewsService.swift in Sources */,
 				3CC212892542DECD00F703E5 /* RealmPhotoService.swift in Sources */,
 				3C3E6C4D2530A16E007031E5 /* GroupsService.swift in Sources */,
 				3C57A7AD24FE290700BEAD34 /* NewsTableViewCell.swift in Sources */,
