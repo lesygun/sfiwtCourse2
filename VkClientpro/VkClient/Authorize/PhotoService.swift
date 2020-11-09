@@ -16,7 +16,7 @@ class PhotoService {
     var token = Session.shared.token
     let realmService = RealmPhotoService()
     
-    func getPhotos (id: Int, callback: @escaping () -> Void) {
+    func getPhotos (id: Int, callback: @escaping ([PhotoItem]) -> Void) {
 
         let url = "https://\(baseUrl)/method/photos.get?&access_token=\(token!)&v=5.124"
 
@@ -35,7 +35,7 @@ class PhotoService {
             let photoGalery = try? decoder.decode(PhotoResponse.self, from: data).response.items
            
             self.realmService.savePhotosData(photoGalery!)
-            callback()
+            callback(photoGalery!)
         }
     }
     
